@@ -1,0 +1,6 @@
+framework module ChainedAttributedString {
+  umbrella header "ChainedAttributedString-umbrella.h"
+
+  export *
+  module * { export * }
+}

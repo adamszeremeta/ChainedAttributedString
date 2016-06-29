@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChainedAttributedString
 
 class ViewController: UIViewController {
 
@@ -16,7 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         
-    
+        self.exampleLabel.attributedText = "This is sample text".attributedString().textColor(UIColor.redColor(), forText: "sample")
+        
     }
 
     override func didReceiveMemoryWarning() {
