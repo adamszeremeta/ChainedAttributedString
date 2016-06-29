@@ -10,6 +10,11 @@ import Foundation
 
 public extension String {
     
+    /**
+        This function create NSMutableAttributedString from String object
+     
+        - returns: Created NSMutableAttributedString with content of String
+     */
     func attributedString() -> NSMutableAttributedString {
         
         return NSMutableAttributedString(string: self)

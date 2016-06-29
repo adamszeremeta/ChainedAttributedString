@@ -17,15 +17,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         
-        self.exampleLabel.attributedText = "This is sample text".attributedString().textColor(UIColor.redColor(), forText: "sample")
+        self.exampleLabel.attributedText = "This is sample text".attributedString().textColor(UIColor.redColor(), forText: "sample").clearAllAttributes()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

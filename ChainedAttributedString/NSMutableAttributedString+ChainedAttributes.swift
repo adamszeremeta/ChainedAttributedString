@@ -13,6 +13,16 @@ public extension NSMutableAttributedString {
     
     // MARK: Chained attributes
     
+    /**
+     This function adds text color attribute to attributed string.
+        
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string
+     
+     - parameter value - UIColor which should be applied as text color
+     - parameter text - String for which should be applied text color (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+    */
     func textColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
@@ -22,6 +32,32 @@ public extension NSMutableAttributedString {
         }
         
         self.applyAttribute(NSForegroundColorAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+    
+    
+    
+    
+    
+    //to do more attributes
+    
+    
+    
+    
+    
+    
+    
+    // MARK: Clear attributes
+    
+    /**
+     This function removes all attributes added to this attributed string.
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func clearAllAttributes() -> NSMutableAttributedString {
+        
+        self.setAttributes(nil, range: self.getRangeOfSelf())
         
         return self
     }
