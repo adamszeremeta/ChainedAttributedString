@@ -36,11 +36,34 @@ public extension NSMutableAttributedString {
         return self
     }
     
+    /**
+     This function adds font attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string
+     
+     - parameter value - UIFont which should be applied as font for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func font(value:UIFont, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSFontAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
     
     
     
     
-    //to do more attributes
+    
     
     
     

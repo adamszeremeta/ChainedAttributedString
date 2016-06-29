@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         
-        self.exampleLabel.attributedText = "This is sample text".attributedString().textColor(UIColor.redColor(), forText: "sample").clearAllAttributes()
+        self.exampleLabel.attributedText = "This is sample text".attributedString().textColor(UIColor.redColor(), forText: "sample").font(UIFont.boldSystemFontOfSize(20), forText: "text")
         
     }
 
