@@ -16,7 +16,7 @@ public extension NSMutableAttributedString {
     /**
      This function adds text color attribute to attributed string.
         
-     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
      
      - parameter value - UIColor which should be applied as text color
      - parameter text - String for which should be applied text color (optional, default = whole attributed string)
@@ -39,7 +39,7 @@ public extension NSMutableAttributedString {
     /**
      This function adds font attribute to attributed string.
      
-     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
      
      - parameter value - UIFont which should be applied as font for attributed string
      - parameter text - String for which should be applied font (optional, default = whole attributed string)
@@ -59,18 +59,167 @@ public extension NSMutableAttributedString {
         return self
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    /**
+     This function adds background color attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - UIColor which should be applied as background color for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func backgroundColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSBackgroundColorAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds kern spacing attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - CGFloat which should be applied as kern spacing for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func kernSpacing(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSKernAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds underline attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - CGFloat which should be applied as underline for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func underline(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSUnderlineStyleAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds underline color attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - UIColor which should be applied as underline color for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func underlineColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSUnderlineColorAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds strike through attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - CGFloat which should be applied as strike through for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func strikeThrough(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSStrikethroughStyleAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds strike through color attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - UIColor which should be applied as strike through color for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func strikeThroughColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSStrikethroughColorAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
+    /**
+     This function adds link attribute to attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter value - UIColor which should be applied as link for attributed string
+     - parameter text - String for which should be applied font (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func link(value:String, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        self.applyAttribute(NSLinkAttributeName, withValue: value, forRange: attributeRange)
+        
+        return self
+    }
+
     // MARK: Clear attributes
     
     /**
