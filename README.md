@@ -17,6 +17,8 @@ Table of contents
 Features
 ========
 
+Features:
+
 - create attributed string from normal string by simply calling `.attributedString()`
 - join many attributed string by using `+` operator
 - chain many attributes to your string one after another for whole string or part of it
@@ -46,11 +48,13 @@ If you can't use CocoaPods for some reason, then grab the files in `ChainedAttri
 Usage
 =====
 
-Just import library by calling `import ChainedAttributedString/` and you are ready to go!
+Just import library by calling `import ChainedAttributedString` and you are ready to go!
 
 Sample operations:
 
 ```swift
+
+import ChainedAttributedString
 
 //join strings
 let one = "Test".attributedString() + "One".attributedString()
