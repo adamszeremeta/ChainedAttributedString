@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //join string
+        //join strings
         let one = "Test".attributedString() + "One".attributedString()
         
         //apply attributes
