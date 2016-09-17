@@ -23,7 +23,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
     */
-    func textColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+    func textColor(_ value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -46,7 +46,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func font(value:UIFont, forText text:String? = nil) -> NSMutableAttributedString {
+    func font(_ value:UIFont, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -69,7 +69,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func backgroundColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+    func backgroundColor(_ value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -92,7 +92,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func kernSpacing(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+    func kernSpacing(_ value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -100,7 +100,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSKernAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSKernAttributeName, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -115,7 +115,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func underline(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+    func underline(_ value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -123,7 +123,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSUnderlineStyleAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSUnderlineStyleAttributeName, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -138,7 +138,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func underlineColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+    func underlineColor(_ value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -161,7 +161,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func strikeThrough(value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
+    func strikeThrough(_ value:CGFloat, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -169,7 +169,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSStrikethroughStyleAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSStrikethroughStyleAttributeName, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -184,7 +184,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func strikeThroughColor(value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
+    func strikeThroughColor(_ value:UIColor, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -207,7 +207,7 @@ public extension NSMutableAttributedString {
      
      - returns: Modified NSMutableAttributedString
      */
-    func link(value:String, forText text:String? = nil) -> NSMutableAttributedString {
+    func link(_ value:String, forText text:String? = nil) -> NSMutableAttributedString {
         
         var attributeRange:NSRange? = nil
         if let textForAttribute = text {
@@ -215,7 +215,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSLinkAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSLinkAttributeName, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -236,20 +236,20 @@ public extension NSMutableAttributedString {
     
     // MARK: Range
     
-    private func getRangeOfSelf() -> NSRange {
+    fileprivate func getRangeOfSelf() -> NSRange {
         
         return NSRange(location: 0, length: self.length)
     }
     
-    private func getRangeOfStringInSelf(value:String) -> NSRange? {
+    fileprivate func getRangeOfStringInSelf(_ value:String) -> NSRange? {
         
-        let range = (self.string as NSString).rangeOfString(value)
+        let range = (self.string as NSString).range(of: value)
         return range.location == NSNotFound ? nil : range
     }
     
     // MARK: Applying attributes
     
-    private func applyAttribute(attributeName:String, withValue value:AnyObject, forRange range:NSRange? = nil) {
+    fileprivate func applyAttribute(_ attributeName:String, withValue value:AnyObject, forRange range:NSRange? = nil) {
         
         let attributeRange = range ?? self.getRangeOfSelf()
         self.addAttribute(attributeName, value: value, range: attributeRange)

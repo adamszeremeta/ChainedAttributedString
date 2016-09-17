@@ -11,7 +11,7 @@ import Foundation
 public func +(left:NSMutableAttributedString, right:NSMutableAttributedString) -> NSMutableAttributedString {
 
     let resultString = left
-    left.appendAttributedString(right)
+    left.append(right)
     
     return resultString
 }

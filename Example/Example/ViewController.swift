@@ -21,11 +21,11 @@ class ViewController: UIViewController {
         
         //apply attributes
         self.exampleLabel.attributedText = "This sample text shows chained attributes".attributedString()
-            .textColor(UIColor.redColor(), forText: "sample")
-            .font(UIFont.boldSystemFontOfSize(20), forText: "This")
+            .textColor(UIColor.red, forText: "sample")
+            .font(UIFont.boldSystemFont(ofSize: 20), forText: "This")
             .kernSpacing(-1, forText: "text")
             .strikeThrough(2, forText: "shows")
-            .strikeThroughColor(UIColor.blueColor())
+            .strikeThroughColor(UIColor.blue)
             .underline(2, forText: "attributes")
         
     }
