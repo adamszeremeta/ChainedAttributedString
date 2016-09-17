@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ChainedAttributedString'
-  s.version      = '1.0.0'
+  s.version      = '2.0.0'
   s.summary      = 'Easy and convenient way to create attributed strings in Swift'
 
   s.homepage     = 'https://github.com/adamszeremeta/ChainedAttributedString'
