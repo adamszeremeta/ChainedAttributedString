@@ -1,5 +1,5 @@
 PODS:
-  - ChainedAttributedString (1.0.0)
+  - ChainedAttributedString (2.0.0)
 
 DEPENDENCIES:
   - ChainedAttributedString (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ChainedAttributedString: b4b169bf29024ddee13df2794beca347b1853ae5
+  ChainedAttributedString: 76435a91793a5bc684d498f9366a191776aff607
 
-PODFILE CHECKSUM: d0aba37e8802b04175a2e6278c6caa3eb64f5838
+PODFILE CHECKSUM: cfa269073f3e258e2b57e986e5dfa5350df5d6a0
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.rc.2
