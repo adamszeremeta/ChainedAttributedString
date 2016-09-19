@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Adam Szeremeta' => 'adamszeremeta@gmail.com' }
 
   s.source       = { :git => 'https://github.com/adamszeremeta/ChainedAttributedString.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.source_files = 'ChainedAttributedString/*.swift'
 
 end
