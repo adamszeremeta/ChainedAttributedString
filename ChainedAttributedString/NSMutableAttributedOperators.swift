@@ -9,9 +9,9 @@
 import Foundation
 
 public func +(left:NSMutableAttributedString, right:NSMutableAttributedString) -> NSMutableAttributedString {
-
-    let resultString = left
-    left.append(right)
-    
-    return resultString
+  
+  let resultString = left
+  left.append(right)
+  
+  return resultString
 }
