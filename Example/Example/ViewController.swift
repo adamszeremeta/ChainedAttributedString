@@ -27,8 +27,12 @@ class ViewController: UIViewController {
             .strikeThrough(2, forText: "shows")
             .strikeThroughColor(UIColor.blue)
             .underline(2, forText: "attributes")
-            .lineSpacing(10)
-            .alignment(.center)
+            .paragraphStyle({
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 30
+                paragraphStyle.alignment = .center
+                return paragraphStyle
+            }())
     }
 
 }
