@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             .strikeThroughColor(UIColor.blue)
             .underline(2, forText: "attributes")
             .lineSpacing(10)
-        
+            .alignment(.center)
     }
 
 }

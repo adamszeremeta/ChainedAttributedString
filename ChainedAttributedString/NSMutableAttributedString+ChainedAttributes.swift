@@ -236,10 +236,35 @@ public extension NSMutableAttributedString {
         if let textForAttribute = text {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
-
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = value
-
+        
+        self.applyAttribute(NSParagraphStyleAttributeName, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
+        
+        return self
+    }
+    
+    /**
+     This function adds paragraph style with text alignment attributed string.
+     
+     - warning: If text passed in "text" parameter is not found, attribute will be applied to whole attributed string. Only first occurence of "text" is styled.
+     
+     - parameter alignment - NSTextAlignment which should be applied as alignment to the paragraph style
+     - parameter text - String for which the paragraph style will be applied to (optional, default = whole attributed string)
+     
+     - returns: Modified NSMutableAttributedString
+     */
+    func alignment(_ alignment:NSTextAlignment, forText text:String? = nil) -> NSMutableAttributedString {
+        
+        var attributeRange:NSRange? = nil
+        if let textForAttribute = text {
+            attributeRange = self.getRangeOfStringInSelf(textForAttribute)
+        }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
         self.applyAttribute(NSParagraphStyleAttributeName, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
         
         return self
