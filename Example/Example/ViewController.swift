@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             .strikeThrough(2, forText: "shows")
             .strikeThroughColor(UIColor.blue)
             .underline(2, forText: "attributes")
-        
+            .alignment(.center)
     }
 
 }
