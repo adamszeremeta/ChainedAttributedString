@@ -31,7 +31,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSForegroundColorAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.foregroundColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -54,7 +54,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSFontAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.font, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -77,7 +77,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSBackgroundColorAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.backgroundColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -100,7 +100,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSKernAttributeName, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.kern, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -123,7 +123,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSUnderlineStyleAttributeName, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.underlineStyle, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -146,7 +146,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSUnderlineColorAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.underlineColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -169,7 +169,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSStrikethroughStyleAttributeName, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.strikethroughStyle, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -192,7 +192,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSStrikethroughColorAttributeName, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.strikethroughColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -215,7 +215,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSLinkAttributeName, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedStringKey.link, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -249,7 +249,7 @@ public extension NSMutableAttributedString {
     
     // MARK: Applying attributes
     
-    fileprivate func applyAttribute(_ attributeName:String, withValue value:AnyObject, forRange range:NSRange? = nil) {
+    fileprivate func applyAttribute(_ attributeName: NSAttributedStringKey, withValue value: AnyObject, forRange range: NSRange? = nil) {
         
         let attributeRange = range ?? self.getRangeOfSelf()
         self.addAttribute(attributeName, value: value, range: attributeRange)

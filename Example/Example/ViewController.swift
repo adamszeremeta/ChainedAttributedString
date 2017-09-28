@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         //join strings
-        let one = "Test".attributedString() + "One".attributedString()
+		_ = "Test".attributedString() + "One".attributedString()
         
         //apply attributes
         self.exampleLabel.attributedText = "This sample text shows chained attributes\nWith line spacing as an option".attributedString()
