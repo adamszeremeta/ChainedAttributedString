@@ -31,7 +31,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.foregroundColor, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.foregroundColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -54,7 +54,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.font, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.font, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -77,7 +77,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.backgroundColor, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.backgroundColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -100,7 +100,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.kern, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.kern, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -123,7 +123,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.underlineStyle, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.underlineStyle, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -146,7 +146,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.underlineColor, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.underlineColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -169,7 +169,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.strikethroughStyle, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.strikethroughStyle, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -192,7 +192,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.strikethroughColor, withValue: value, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.strikethroughColor, withValue: value, forRange: attributeRange)
         
         return self
     }
@@ -215,7 +215,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.link, withValue: value as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.link, withValue: value as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -240,7 +240,7 @@ public extension NSMutableAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = value
         
-        self.applyAttribute(NSAttributedStringKey.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -255,7 +255,7 @@ public extension NSMutableAttributedString {
             attributeRange = self.getRangeOfStringInSelf(textForAttribute)
         }
         
-        self.applyAttribute(NSAttributedStringKey.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -280,7 +280,7 @@ public extension NSMutableAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         
-        self.applyAttribute(NSAttributedStringKey.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
+        self.applyAttribute(NSAttributedString.Key.paragraphStyle, withValue: paragraphStyle as AnyObject, forRange: attributeRange)
         
         return self
     }
@@ -314,7 +314,7 @@ public extension NSMutableAttributedString {
     
     // MARK: Applying attributes
     
-    fileprivate func applyAttribute(_ attributeName: NSAttributedStringKey, withValue value: AnyObject, forRange range: NSRange? = nil) {
+    fileprivate func applyAttribute(_ attributeName: NSAttributedString.Key, withValue value: AnyObject, forRange range: NSRange? = nil) {
         
         let attributeRange = range ?? self.getRangeOfSelf()
         self.addAttribute(attributeName, value: value, range: attributeRange)
